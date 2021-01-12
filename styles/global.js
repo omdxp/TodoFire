@@ -22,6 +22,7 @@ export const globalStyles = StyleSheet.create({
   },
   textInput: {
     width: '100%',
+    padding: 10,
     backgroundColor: 'white',
     fontSize: 28,
     borderRadius: 20,
