@@ -26,13 +26,14 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 20,
   },
   textButton: {
+    fontFamily: 'HachiMaruPop-Regular',
     textAlign: 'center',
     justifyContent: 'center',
     fontSize: 28,
-    fontWeight: 'bold',
     color: 'white',
   },
   textInput: {
+    fontFamily: 'HachiMaruPop-Regular',
     width: '100%',
     padding: 10,
     backgroundColor: 'white',
@@ -47,6 +48,7 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 319 / 2,
   },
   text: {
+    fontFamily: 'HachiMaruPop-Regular',
     fontSize: 27,
     color: 'white',
   },
