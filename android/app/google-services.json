@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "22014757370",
+    "project_id": "todo-react-fbda6",
+    "storage_bucket": "todo-react-fbda6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22014757370:android:87cd40c50378ff2465fc43",
+        "android_client_info": {
+          "package_name": "com.omar.todoreact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22014757370-ijitbbms9745j6igju15id4f6tesasqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYIJDdQ8Fz6qBskbl4nvKMCsuiI1if1WU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22014757370-ijitbbms9745j6igju15id4f6tesasqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

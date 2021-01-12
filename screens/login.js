@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import {globalStyles} from '../styles/global';
 
 export default function Login() {
   return (
     <View style={globalStyles.container}>
+      <Image source={require('../assets/Todofire.png')} />
       <TextInput
         style={globalStyles.textInput}
         keyboardType="email-address"
