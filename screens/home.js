@@ -4,33 +4,19 @@ import {TextInput} from 'react-native-gesture-handler';
 import {globalStyles} from '../styles/global';
 import Header from './shared/header';
 import uuid from 'react-native-uuid';
+import {connect} from 'react-redux';
+import VisibleTodos from './shared/visible-todos';
+import {addTodoAction} from '../redux/actions';
 
-function Home({navigation, state}) {
-  const [items, setItems] = useState([]);
+function Home({navigation, dispatch}) {
+  const [todos, setTodos] = useState([]);
+  const [visibilityFilter, setVisibilityFilter] = useState('SHOW_ALL_TODOS');
   const [item, setItem] = useState('');
 
-  console.log(state);
-
-  useEffect(() => {
-    console.log('useEffect ran', items);
-  }, [items]);
-
-  const addItemHandler = (item) => {
-    var itemAlreadyAdded = false;
-    if (item.length < 3) {
-      Alert.alert('Alert', 'Items must contain more than 3 characters', ['Ok']);
-      return;
-    }
-    items.forEach((i) => {
-      if (item === i.item) itemAlreadyAdded = true;
-    });
-    if (itemAlreadyAdded) {
-      Alert.alert('Alert', 'You already added this item', ['Ok']);
-      return;
-    } else {
-      setItems([...items, {item, id: uuid.v4()}]);
-      console.log(items);
-    }
+  const addTodo = (text) => {
+    //update redux
+    dispatch(addTodoAction(text));
+    setItem('');
   };
 
   return (
@@ -41,9 +27,10 @@ function Home({navigation, state}) {
         <View
           style={[
             globalStyles.row,
-            {justifyContent: 'center', alignItems: 'stretch'},
+            {justifyContent: 'center', alignItems: 'stretch', height: 60},
           ]}>
           <TextInput
+            value={item}
             style={[globalStyles.textInput, {width: 500}]}
             placeholder="Add item..."
             keyboardType="default"
@@ -53,13 +40,17 @@ function Home({navigation, state}) {
           <TouchableOpacity
             style={globalStyles.button}
             onPress={() => {
-              addItemHandler(item);
+              addTodo(item);
             }}>
             <Text style={globalStyles.textButton}>Add</Text>
           </TouchableOpacity>
+        </View>
+        <View style={{marginVertical: 10}}></View>
+        <View>
+          <VisibleTodos />
         </View>
       </View>
     </View>
   );
 }
-export default Home;
+export default connect()(Home);
