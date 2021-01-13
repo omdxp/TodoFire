@@ -47,6 +47,11 @@ export const globalStyles = StyleSheet.create({
     width: 319,
     borderRadius: 319 / 2,
   },
+  smallLogo: {
+    height: 50,
+    width: 50,
+    borderRadius: 50 / 2,
+  },
   text: {
     fontFamily: 'HachiMaruPop-Regular',
     fontSize: 27,
