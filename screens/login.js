@@ -26,6 +26,7 @@ export default function Login({navigation}) {
         />
         <View style={{marginVertical: 10}}></View>
         <TextInput
+          value={email}
           style={globalStyles.textInput}
           keyboardType="email-address"
           placeholder="Enter your email"
@@ -33,6 +34,7 @@ export default function Login({navigation}) {
         />
         <View style={{marginVertical: 10}}></View>
         <TextInput
+          value={password}
           style={globalStyles.textInput}
           placeholder="Enter your password"
           secureTextEntry={true}
@@ -56,14 +58,15 @@ export default function Login({navigation}) {
                 setPassword('');
                 setEmail('');
                 setPassword('');
+                setIsLoading(false);
+
                 navigation.navigate('Home');
               })
               .catch((error) => setErrorMessage(error.message));
-            setIsLoading(false);
           }}>
           <Text style={globalStyles.textButton}>Sign in</Text>
         </TouchableOpacity>
-        <LoadingIcon isIconAnimating={isLoading} />
+        {isLoading ? <LoadingIcon /> : <View />}
         {errorMessage.length !== 0 ? (
           <Text style={[globalStyles.text, {color: 'red'}]}>
             {errorMessage}

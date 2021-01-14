@@ -31,6 +31,7 @@ export default function SignUp({navigation}) {
         />
         <View style={{marginVertical: 10}}></View>
         <TextInput
+          value={name}
           style={globalStyles.textInput}
           keyboardType="default"
           placeholder="Enter your name"
@@ -38,6 +39,7 @@ export default function SignUp({navigation}) {
         />
         <View style={{marginVertical: 10}}></View>
         <TextInput
+          value={surname}
           style={globalStyles.textInput}
           keyboardType="default"
           placeholder="Enter your surname"
@@ -45,6 +47,7 @@ export default function SignUp({navigation}) {
         />
         <View style={{marginVertical: 10}}></View>
         <TextInput
+          value={email}
           style={globalStyles.textInput}
           keyboardType="email-address"
           placeholder="Enter your email"
@@ -52,6 +55,7 @@ export default function SignUp({navigation}) {
         />
         <View style={{marginVertical: 10}}></View>
         <TextInput
+          value={password}
           style={globalStyles.textInput}
           placeholder="Enter your password"
           secureTextEntry={true}

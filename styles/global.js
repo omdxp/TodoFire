@@ -65,4 +65,10 @@ export const globalStyles = StyleSheet.create({
     justifyContent: 'flex-end',
     padding: 10,
   },
+  todos: {
+    padding: 27,
+    borderWidth: 1,
+    borderColor: '#006699',
+    borderRadius: 27,
+  },
 });
