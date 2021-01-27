@@ -10,6 +10,7 @@ import {
 import {globalStyles} from '../styles/global';
 import auth from '@react-native-firebase/auth';
 import LoadingIcon from './shared/loading';
+import {SizedBox} from 'sizedbox';
 
 export default function Login({navigation}) {
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ export default function Login({navigation}) {
           style={globalStyles.logo}
           source={require('../assets/Todofire.png')}
         />
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <TextInput
           value={email}
           style={globalStyles.textInput}
@@ -32,7 +33,7 @@ export default function Login({navigation}) {
           placeholder="Enter your email"
           onChangeText={(text) => setEmail(text)}
         />
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <TextInput
           value={password}
           style={globalStyles.textInput}
@@ -40,7 +41,7 @@ export default function Login({navigation}) {
           secureTextEntry={true}
           onChangeText={(text) => setPassword(text)}
         />
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <TouchableOpacity
           disabled={isLoading}
           style={globalStyles.button}
@@ -74,7 +75,7 @@ export default function Login({navigation}) {
         ) : (
           <View></View>
         )}
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
 
         <View style={globalStyles.row}>
           <Text style={globalStyles.text}>Don't have an account?</Text>

@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, TouchableOpacity, Image} from 'react-native';
 import {globalStyles} from '../../styles/global';
 import auth from '@react-native-firebase/auth';
+import {SizedBox} from 'sizedbox';
 
 export default function Header({navigation}) {
   return (
@@ -10,7 +11,7 @@ export default function Header({navigation}) {
         source={require('../../assets/Todofire.png')}
         style={globalStyles.smallLogo}
       />
-      <View style={{marginHorizontal: 10}}></View>
+      <SizedBox horizontal={10} />
       <TouchableOpacity
         style={globalStyles.button}
         onPress={() => {

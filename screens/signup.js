@@ -10,6 +10,7 @@ import {
 import {globalStyles} from '../styles/global';
 import auth from '@react-native-firebase/auth';
 import LoadingIcon from './shared/loading';
+import {SizedBox} from 'sizedbox';
 
 export default function SignUp({navigation}) {
   const [name, setName] = useState('');
@@ -29,7 +30,7 @@ export default function SignUp({navigation}) {
           style={globalStyles.logo}
           source={require('../assets/Todofire.png')}
         />
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <TextInput
           value={name}
           style={globalStyles.textInput}
@@ -37,7 +38,7 @@ export default function SignUp({navigation}) {
           placeholder="Enter your name"
           onChangeText={(text) => setName(text)}
         />
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <TextInput
           value={surname}
           style={globalStyles.textInput}
@@ -45,7 +46,7 @@ export default function SignUp({navigation}) {
           placeholder="Enter your surname"
           onChangeText={(text) => setSurname(text)}
         />
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <TextInput
           value={email}
           style={globalStyles.textInput}
@@ -53,7 +54,7 @@ export default function SignUp({navigation}) {
           placeholder="Enter your email"
           onChangeText={(text) => setEmail(text)}
         />
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <TextInput
           value={password}
           style={globalStyles.textInput}
@@ -96,7 +97,7 @@ export default function SignUp({navigation}) {
         ) : (
           <View></View>
         )}
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
 
         <View style={globalStyles.row}>
           <Text style={globalStyles.text}>Already have an account?</Text>

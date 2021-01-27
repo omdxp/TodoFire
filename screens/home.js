@@ -15,6 +15,7 @@ import {connect} from 'react-redux';
 import VisibleTodos from './shared/visible-todos';
 import {addTodoAction} from '../redux/actions';
 import TodoList from './shared/todo-list';
+import {SizedBox} from 'sizedbox';
 
 function Home({navigation, dispatch}) {
   const [todos, setTodos] = useState([]);
@@ -70,7 +71,7 @@ function Home({navigation, dispatch}) {
             keyboardType="default"
             onChangeText={(text) => setItem(text)}
           />
-          <View style={{marginHorizontal: 10}}></View>
+          <SizedBox horizontal={10} />
           <TouchableOpacity
             style={globalStyles.button}
             onPress={() => {
@@ -79,7 +80,7 @@ function Home({navigation, dispatch}) {
             <Text style={globalStyles.textButton}>Add</Text>
           </TouchableOpacity>
         </View>
-        <View style={{marginVertical: 10}}></View>
+        <SizedBox vertical={10} />
         <ScrollView>
           <VisibleTodos />
         </ScrollView>

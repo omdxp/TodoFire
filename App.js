@@ -7,6 +7,7 @@ import auth from '@react-native-firebase/auth';
 import SignUp from './screens/signup';
 import store from './redux/store';
 import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/es/integration/react';
 
 export default function App() {
   // States while firebase connection
@@ -28,25 +29,27 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <AuthStack.Navigator initialRouteName={user ? 'Home' : 'Login'}>
-          <AuthStack.Screen
-            name="Login"
-            component={Login}
-            options={{headerShown: false}}
-          />
-          <AuthStack.Screen
-            name="SignUp"
-            component={SignUp}
-            options={{headerShown: false}}
-          />
-          <AuthStack.Screen
-            name="Home"
-            component={Home}
-            options={{headerShown: false}}
-          />
-        </AuthStack.Navigator>
-      </NavigationContainer>
+      <PersistGate persistor={}>
+        <NavigationContainer>
+          <AuthStack.Navigator initialRouteName={user ? 'Home' : 'Login'}>
+            <AuthStack.Screen
+              name="Login"
+              component={Login}
+              options={{headerShown: false}}
+            />
+            <AuthStack.Screen
+              name="SignUp"
+              component={SignUp}
+              options={{headerShown: false}}
+            />
+            <AuthStack.Screen
+              name="Home"
+              component={Home}
+              options={{headerShown: false}}
+            />
+          </AuthStack.Navigator>
+        </NavigationContainer>
+      </PersistGate>
     </Provider>
   );
 }
